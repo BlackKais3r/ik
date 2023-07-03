@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ippokratis Kotsapasis</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-interactivity@latest/dist/lottie-interactivity.min.js"></script>
+    <link rel="shortcut icon" href="/gra/fav.gif" >
+    <link rel="icon" href="/gra/fav.gif" type="image/gif" >
+</head>
+
+<body>
+    <div id="loader-par" class="pg-loader">
+        <lottie-player id="loader" src="/gra/cat_load.json" speed="1.5"
+        autoplay style="z-index: 3;"></lottie-player>
+    </div>    
+        <header class="h-container">
+        <nav class="container">
+            <h1 class="name">Ippokratis Kotsapasis &#x1F44B;</h1>
+            <div>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <!-- <h1 style="margin-right: 200px;">Toggle</h1> -->
+            </div>
+        </nav>
+
+    </header>
+    <section id="hero">
+        <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_5dvt9drm.json"
+            style=" color-scheme: transparent; position: absolute; width: 100%; height: auto; z-index: -1;" speed="1"
+            loop autoplay></lottie-player>
+        <div class="container">
+            <h2>Web Developer</h2>
+            <p>Building beautiful and functional websites.</p>
+        </div>
+    </section>
+
+
+    <section id="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I'm a passionate web developer with expertise in front-end development. I specialize in creating
+                responsive and user-friendly websites.</p>
+        </div>
+    </section>
+
+    <section id="work">
+        <div class="container">
+            <h2>Work</h2>
+            <div class="project">
+                <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_flav330e.json" mode="bounce"
+                    background="transparent" speed="0.5" style="width: 300px; height: 300px;" loop
+                    autoplay></lottie-player>
+                <div class="project-details">
+                    <h3>QR Code Generator</h3>
+                    <p>Generate QR Codes with the ability to Download and Copy them.</p>
+                    <a href="/qr/" target="_blank">View Project</a>
+                </div>
+            </div>
+            <div class="project">
+                <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_20lywwls.json"
+                    background="transparent" speed="1" style="width: 300px; height: 300px;" loop
+                    autoplay></lottie-player>
+                <div class="project-details">
+                    <h3>Loading...</h3>
+                    <p>Lorem ipsum dolor sit amet, Donec vestibulum cursus fringilla.</p>
+                    <a href="#work" target="_blank">View Project</a>
+                </div>
+            </div>
+            <div class="project">
+                <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_20lywwls.json"
+                    background="transparent" speed="1" style="width: 300px; height: 300px;" loop
+                    autoplay></lottie-player>
+                <div class="project-details">
+                    <h3>Loading...</h3>
+                    <p>Lorem ipsum dolor sit amet, Donec vestibulum cursus fringilla.</p>
+                    <a href="#work" target="_blank">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact</h2>
+            <p>If you'd like to get in touch, feel free to reach out to me using the contact details below.</p>
+            <ul>
+                <li><a href="mailto:null@gmail.com"><i class="material-icons">email</i>null@gmail.com</a></li>
+                <li><a href="tel:+306912345678"><i class="material-icons">phone</i>(+30) 6912345678</a></li>
+                <li><a href="https://www.linkedin.com/in/ippokratis-kotsapasis-345740200/" target="_blank"><img style="vertical-align:middle;" src="/gra/icons8-linkedin-24.svg" alt=""> Ippokratis Kotsapasis</a></li>
+                <li><i class="material-icons">location_on</i> Thessaloniki, Greece <div
+                        style="max-width:100%;list-style:none; transition: none;overflow:hidden;width:300px;height:300px;">
+                        <div id="gmap-canvas" style="height:100%; width:100%;max-width:100%; margin-top: 10px;"><iframe
+                                style="height:100%;width:100%;border:0;" frameborder="0"
+                                src="https://www.google.com/maps/embed/v1/place?q=Thessaloniki,+Greece&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+                        </div><a class="google-maps-html" href="https://www.bootstrapskins.com/themes"
+                            id="grab-map-info">premium bootstrap themes</a>
+                        <style>
+                            #gmap-canvas img {
+                                max-width: none !important;
+                                background: none !important;
+                                font-size: inherit;
+                                font-weight: inherit;
+                            }
+                        </style>
+                    </div>
+                </li>
+                
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Ippokratis Kotsapasis</p>
+        </div>
+    </footer>
+    <script src="index.js"></script>
+</body>
+
+</html>
