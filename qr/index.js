@@ -15,7 +15,7 @@ text.addEventListener("keyup", () => {      //input listener
 
 
 
-async function newQR() {
+function newQR() {
 
 
     if (!text.value) return;
@@ -35,7 +35,7 @@ async function newQR() {
     dl_button = document.getElementById('dl-btn');
     dl_button.addEventListener('click', async () => {
         try {
-            await downloadImage(url)
+            downloadImage(url)
             dl_button.setHTML('Downloaded &#10004;');
         } catch (err) {
             dl_button.setHTML('Downlaod Failed &#10006;');
