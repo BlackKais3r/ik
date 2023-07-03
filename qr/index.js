@@ -29,7 +29,7 @@ function newQR() {
             <button id="copy-btn" class="img-btn">Copy to clipboard &#128279;</button>
         </div>
     `;
-    document.getElementById('img-entry').setHTML(html);
+    entry.setHTML(html, null);
     wrapper.classList.add('active');
 
     dl_button = document.getElementById('dl-btn');
