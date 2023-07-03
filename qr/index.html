@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Martian+Mono&family=Open+Sans:ital,wght@0,300;0,500;0,600;1,400;1,500;1,600&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    
+    <h1 class="ti-wrapper">QR Code Generator</h1>
+    <div class="wrapper">
+        <div>
+            <lottie-player src="https://assets1.lottiefiles.com/private_files/lf30_65cfvlja.json" mode="bounce"
+                background="transparent" speed="1" loop autoplay></lottie-player>
+        </div>
+        <!-- <input type="text" id="text-entry" class="qr-input" placeholder="Text to encode"> -->
+        <form action=""></form>
+        <textarea class="text-input" name="input" id="text-entry" placeholder="Type (or paste) here..."
+            spellcheck="false"></textarea>
+        <!-- <button 
+            type="button" class="gen-btn">Generate QR
+        </button> -->
+
+        <button class="gen-btn" onclick="newQR()">
+            <div>
+                Generate QR
+            </div>
+        </button>
+    </div>
+    <div class="img-wrapper" id="img-entry">
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
