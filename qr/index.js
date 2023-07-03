@@ -32,7 +32,8 @@ function newQR() {
     try{
         entry.setHTML(html);
     } catch (err) {
-        entry.innerHTML = sanitizeFunctionOutput(html);
+        const sanitizedOutput = sanitizeFunctionOutput(html);
+        entry.innerHTML = sanitizedOutput;
     }
     wrapper.classList.add('active');
 
