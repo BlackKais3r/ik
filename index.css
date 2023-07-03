@@ -12,7 +12,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 2;
+    z-index: 1;
     transform-origin: top left;
     animation: slideDown 1s 1.2s forwards;
     border-radius: 10%;
