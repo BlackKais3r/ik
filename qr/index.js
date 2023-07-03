@@ -32,11 +32,14 @@ function newQR() {
     try{
         entry.setHTML(html);
     } catch (err) {
+        const tempElement = document.createElement('div');
         const sanitizedOutput = sanitizeFunctionOutput(html);
-        entry.innerHTML = sanitizedOutput;
+        tempElement.innerHTML = sanitizedOutput;
+        while (tempElement.firstChild) {
+            entry.appendChild(tempElement.firstChild);
+        }
     }
     wrapper.classList.add('active');
-
     dl_button = document.getElementById('dl-btn');
     dl_button.addEventListener('click', async () => {
         try {
