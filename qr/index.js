@@ -29,7 +29,11 @@ function newQR() {
             <button id="copy-btn" class="img-btn">Copy to clipboard &#128279;</button>
         </div>
     `;
-    entry.setHTML(html, null);
+    try{
+        entry.setHTML(html);
+    } catch (err) {
+        entry.innerHTML = sanitizeFunctionOutput(html);
+    }
     wrapper.classList.add('active');
 
     dl_button = document.getElementById('dl-btn');
@@ -73,8 +77,29 @@ function newQR() {
     });
 
 
+function sanitizeFunctionOutput(output) {
+  // Sanitize the URL
+  const url = encodeURIComponent(output.url);
 
+  // Validate and sanitize the HTML
+  const validHTMLRegex = /^[a-zA-Z0-9-]+$/; // Define a regex for valid HTML tags and attributes
+  const sanitizedOutput = output
+    .replace(/</g, "&lt;") // Replace opening angle brackets with HTML entity
+    .replace(/>/g, "&gt;") // Replace closing angle brackets with HTML entity
+    .replace(/(\s)src(\s)*=(\s)*\${url}/g, `$1src=$2"${url}"`); // Sanitize the src attribute
 
+  // Validate and sanitize the HTML tags and attributes
+  const sanitizedOutputWithValidTags = sanitizedOutput.replace(/<[a-zA-Z0-9-]+/g, tag => {
+    const tagName = tag.substring(1); // Remove the opening angle bracket from the tag
+    if (tagName.match(validHTMLRegex)) {
+      return tag; // Return the tag if it matches the valid HTML regex
+    } else {
+      return "&lt;"; // Replace the tag with HTML entity if it doesn't match the regex
+    }
+  });
+
+  return sanitizedOutputWithValidTags;
+}
 
 
 }
