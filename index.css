@@ -15,7 +15,6 @@ body {
     z-index: 3;
     transform-origin: top left;
     animation: slideDown 1s 1.2s forwards;
-    border-radius: 10%;
 }
 
 .pouf {
