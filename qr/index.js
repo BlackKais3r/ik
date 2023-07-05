@@ -84,8 +84,12 @@ function sanitizeFunctionOutput(output) {
   // Sanitize the HTML code
   const sanitizedOutput = DOMPurify.sanitize(output, { ADD_ATTR: ['src'] });
 
-  return sanitizedOutput.replace(/\${url}/g, `"${url}"`);
+  // Encode the sanitized output using HTML entities
+  const encodedOutput = encodeURIComponent(sanitizedOutput).replace(/'/g, '%27').replace(/"/g, '%22');
+
+  return encodedOutput.replace(/\${url}/g, `"${url}"`);
 }
+
 
 
 }
