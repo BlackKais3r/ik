@@ -87,8 +87,12 @@ function sanitizeFunctionOutput(output) {
   // Encode the sanitized output using HTML entities
   const encodedOutput = encodeURIComponent(sanitizedOutput).replace(/'/g, '%27').replace(/"/g, '%22');
 
-  return encodedOutput.replace(/\${url}/g, `"${url}"`);
+  // Wrap the encoded output within an HTML element
+  const wrappedOutput = `<div>${encodedOutput}</div>`;
+
+  return wrappedOutput.replace(/\${url}/g, `"${url}"`);
 }
+
 
 
 
