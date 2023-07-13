@@ -42,7 +42,8 @@ html {
 }
 
 .h-container {
-
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
     border-radius: 20px;
     background-color: #fff;
 }
