@@ -20,7 +20,7 @@ function newQR() {
 
     if (!text.value) return;
     let html = '';
-    url = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${text.value}`;
+    url = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${sanitizeFunctionOutput(text.value)}`;
 
     html += `
         <img id="qr-img" src = ${url}>
@@ -32,8 +32,7 @@ function newQR() {
     try{
         entry.setHTML(html);
     } catch (err) {
-        const sanitizedOutput = sanitizeFunctionOutput(html);
-        entry.innerHTML = sanitizedOutput;
+        entry.innerHTML = html;
         }
     wrapper.classList.add('active');
     dl_button = document.getElementById('dl-btn');
@@ -78,17 +77,13 @@ function newQR() {
 
 
 function sanitizeFunctionOutput(output) {
-  // Sanitize the URL
-  const url = DOMPurify.sanitize(output.url);
-
-  // Sanitize the HTML code
-  const sanitizedOutput = DOMPurify.sanitize(output, { ADD_ATTR: ['src'] });
-
-  // Encode the sanitized output using HTML entities
-  const encodedOutput = encodeURIComponent(sanitizedOutput);
-
-  return wrappedOutput.replace(/\${url}/g, `"${url}"`);
-}
+        const encodedHTML = output.replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#039;');
+        return DOMPurify.sanitize(encodedHTML);
+    }
 
 
 
